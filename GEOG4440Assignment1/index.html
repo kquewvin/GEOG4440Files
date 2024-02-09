@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>GEOG4440 Assignment 01</title>
+</head>
+
+<body>
+    <header class="sticky">
+        <!-- <h2 class="course">GEOG4440</h2> -->
+        <h2><a href=#index.html onclick="myFunction()" class="course">GEOG4440</a></h2>
+        <nav class="navigation">
+            <a href="map1.html" target="_self" rel="norefferer noopener">Map 1</a>
+            <a href="map2.html" target="_self" rel="norefferer noopener">Map 2</a>
+            <a href="compare.html" target="_self" rel="norefferer noopener">Compare</a>
+            <a>Kevin Chu - 218083477</a>
+        </nav>
+    </header>
+
+    <section class="parallax">
+        <img src="cloud_cartoon.png" class="cloud1">
+        <img src="cartoon_earth.png" class="earth">
+        <img src="cloud_cartoon.png" class="cloud2">
+        <img src="cloud_cartoon.png" class="cloud3">
+        <img src="satellite_cartoon.png" class="satellite">
+    <h2 class="AssignmentName">What's in an image anyways?</h2>
+    </section>
+
+    <section class="sec">
+        <h2>Assignment 1: Data Description, Metadata, and More</h2>
+
+        <div class="image-link-container">
+            <!-- First image hyperlink-->
+            <a href="map1.html" class="image-link-item" target="_self" rel="norefferer noopener"><img src="Yorku2002.png" alt="Map1" style="width:auto;height:6cm;">
+                <div>York University Keele Campus 2002</div>
+                <span class="tooltip-text">Open Map</span>
+            </a>
+            <!--Second image hyperlink-->
+            <a href="map2.html" class="image-link-item" target="_self" rel="norefferer noopener"><img src="Yorku2021.png" alt="Map2" style="width:auto;height:6cm;">
+                <div>York University Keele Campus 2021</div>
+                <span class="tooltip-text">Open Map</span>
+            </a>
+        </div>
+        <p><br>The purpose of this website is for me to apply my beginner-level knowledge of programming/web development to my formal education in environmental studies
+            and geospatial analysis for this course. As the Winter term continues, I plan to update this site periodically with completed assignments related to spatial
+            analysis and Geographic Information Systems (GIS)
+            <br><br>
+            Sources I used to find free remote sensing data and imagery:
+            <br>
+            <a href="https://earthexplorer.usgs.gov/" class="web_links" target="_blank" rel="norefferer noopener">USGS Earth Explorer</a><br>
+            The United States Geological Survey provides geographic data about Earth's land, water, and atmosphere. It collects, monitors, and analyzes scientific data to
+            understand natural processes. It is an open access portal for downloading free aerial imagery, including digital elevation models, Landsat, LiDAR, MODIS, and more.
+            <br><br>
+            <a href="https://geo1.scholarsportal.info" class="web_links" target="_blank" rel="norefferer noopener">Scholars Geoportal</a><br>
+            The Scholars GeoPortal provides access to large scale geospatial datasets. It allows for searching, discovery, and visualization to make data about Ontario<br> for the public. 
+            <br><br>
+            <a href="https://open.toronto.ca" class="web_links" target="_blank" rel="norefferer noopener">City of Toronto - Open Data</a><br>
+            The City of Toronto's open data portal provides free and downloadable information about the city. Accessible data can vary broadly from textual data like census reports<br>
+            to geospatial data about infrastructure, planning, and boudaries.
+            <br><br>
+            <a href="https://www.esa.int/ESA_Multimedia/Missions/Sentinel-2/(result_type)/images" class="web_links" target="_blank" rel="norefferer noopener">Sentinel 2 Archive</a><br>
+            Provides open access to EU Copernicus Sentinel-1, Sentinel-2, Sentinel-3 and Sentinel-5P aerial data.
+            <br><br>
+            <a href="http://nsidc.org/data" class="web_links" target="_blank" rel="norefferer noopener">National Snow and Ice Data Centre</a><br>
+            Provides open access to cryospheric and geophysical data. It is suitable for identifying changes to global snow coverage, detection, and temporal changes in the environment.
+            <br><br>
+        </p>
+        <h2>Data Acquisition</h2>
+        <div class="image-link-container">
+            <!-- First image hyperlink-->
+            <img src="map_scope.png" alt="scope" style="width:auto;height:10cm;">
+        </div>
+        <p>The dataset that I decided to use was obtained through the Ontario Ministry of Natural Resources (2002) and First Base Solutions (2021) on Scholars GeoPortal's
+            open data hub. The scope of this area was selected using the polygon clipping tool that is available to use by selecting to download by an area of interest.
+            I am particularly interested in urban development and expansion of cities. As such, I found and selected data that is most revelant to my research. 
+            York University's Keele campus was my area of interest for this assignment because the campus is located within the center of the Greater Toronto Area and
+            just north of the Toronto metropolis, bordering the York region. The University has undergone various development and changes within the past two decades and is
+            still continuing development.
+        </p>
+        <br><br>
+        <div class="image-link-container">
+            <!-- First image hyperlink-->
+            <img src="translate.png" alt="translate" style="width:auto;height:10cm;">
+        </div>
+        <p>After downloading the data, I had to open each individual .tif file into CATALYST Professional. The original .tif files were incompatible with CATALYST 
+            and so I had to use the translate tool to convert them into PCIDSK (.pix) files and export the entire dataset as one file. I did this for both maps.
+        </p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

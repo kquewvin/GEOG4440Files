@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins','sans-serif';
+}
+
+body {
+    background-color: #0D1821;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+header {
+    color: #060B0F;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.course {
+    font-size: 2rem;
+    color: #D6D5C9;
+    padding: 6px 15px;
+    border-radius: 20px;
+    margin: 0 10px;
+    font-weight: 600;
+}
+
+.course:hover {
+    background: #D6D5C9;
+    color: #060B0F;
+}
+
+.sticky {
+    position: absolute;
+    position: sticky;
+    top: 0;
+    padding: 6px 15px;
+    background-color: #060B0F;
+    border: 2px solid #060B0F;
+}
+
+.sticky a {
+    text-decoration: none;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #D6D5C9;
+    padding: 6px 15px;
+    border-radius: 20px;
+    margin: 0 10px;
+    font-weight: 600;
+}
+
+.navigation a:hover {
+    background: #D6D5C9;
+    color: #060B0F;
+}
+
+/* each state */
+.navigation a:visited {
+    text-decoration: none;
+}
+
+.AssignmentName { 
+    position: absolute;
+    top: 600px;
+    font-size: 3em;
+    color: #D6D5C9;
+}
+
+.text {
+    padding-bottom: 25px;
+    font-size: 1em;
+    color: #D6D5C9;
+    font-weight: 300;
+}
+
+.sec {
+    position: relative;
+    padding: 400px;
+    padding-top: 0;
+}
+
+.sec h2 {
+    padding: 20px;
+    text-align: center;
+    font-size: 2em;
+    color: #D6D5C9;
+}
+
+.sec a {
+    color: #D6D5C9;
+}
+
+.image-link-container {
+    padding-bottom: 50px;
+    display: flex; /* This enables flexbox layout */
+    justify-content: space-around; /* This spaces out the items evenly */
+    align-items: center; /* This vertically centers the items */
+}
+
+/* Tooltip container */
+.image-link-item {
+    position: relative;
+    display: inline-block;
+    border: 5px solid #525252;
+    background-color: #525252;
+    text-align: center; /* Center text horizontally within the image-link-item */
+    padding: 10px; /* Add padding to the image-link-item */
+    text-decoration: none;
+}
+
+.google-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+.google-image iframe {
+    width: 100%;
+    height: auto;
+}
+
+/* Tooltip text */
+.tooltip-text {
+    visibility: hidden;
+    width: 120px;
+    background-color: #3A6992;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    margin-left: -60px;
+    margin-top: 15px;
+
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.image-link-item div {
+    color: #D6D5C9;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+/* Tooltip arrow */
+.tooltip-text::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color:  transparent transparent #3A6992 transparent;
+}
+
+/* Show the tooltip text when you hover over the tooltip container */
+.image-link-item:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.map_num {
+    text-align: center;
+    color: #D6D5C9;
+    pointer-events: none;
+    font-size: 2rem;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    margin-bottom: 20px;
+}
+.img-container {
+    text-align: center;
+    margin-right: 200px;
+}
+
+.img-container figcaption {
+    color: #D6D5C9;
+    text-align: center;
+}
+
+.image-compare-container {
+    padding: 30px;
+    display: flex; /* This enables flexbox layout */
+    justify-content: space-around; /* This spaces out the items evenly */
+    align-items: center; /* This vertically centers the items */
+}
+
+.image-compare-item {
+    position: relative;
+    display: inline-block;
+    border: 5px solid #333;
+    background-color: #333;
+    text-align: center; /* Center text horizontally within the image-link-item */
+    padding: 10px; /* Add padding to the image-link-item */
+}
+
+.image-compare-item div {
+    color: #D6D5C9;
+}
+

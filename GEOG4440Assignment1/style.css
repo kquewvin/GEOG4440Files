@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins','sans-serif';
+}
+
+body {
+    background: url('stars_background.jpg') center/cover fixed no-repeat;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+header {
+    color: #272727;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.course {
+    font-size: 2rem;
+    color: #E6AF2E;
+    padding: 6px 15px;
+    border-radius: 20px;
+    margin: 0 10px;
+    font-weight: 600;
+}
+
+.course:hover {
+    background: #E6AF2E;
+    color: #272727;
+}
+
+.sticky {
+    position: absolute;
+    position: sticky;
+    top: 0;
+    padding: 6px 15px;
+    background-color: #272727;
+    border: 2px solid #111111;
+    margin-bottom: 50px;
+}
+
+.sticky a {
+    text-decoration: none;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #E6AF2E;
+    padding: 6px 15px;
+    border-radius: 20px;
+    margin: 0 10px;
+    font-weight: 600;
+}
+
+.navigation a:hover {
+    background: #E6AF2E;
+    color: #272727;
+}
+
+/* each state */
+.navigation a:visited {
+    text-decoration: none;
+}
+
+/* a:hover, a:active, a:focus {
+    text-decoration: none;
+    color: #E6AF2E
+} */
+
+.parallax {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.AssignmentName { 
+    position: absolute;
+    top: 600px;
+    font-size: 3em;
+    color: #E6AF2E;
+}
+
+.parallax img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+    transition: transform 0.5s ease-out; /* Add smooth transition */
+}
+
+.satellite {
+    position: absolute;
+    max-width: 2cm;
+    max-height: 2cm;
+    margin: 9cm;
+    margin-left: 27cm 
+}
+
+.earth {
+    position: absolute;
+    max-width: 15cm;
+    max-height: 15cm;
+    margin: 4cm;
+    margin-left: 17cm;
+}
+
+.cloud1 {
+    position: absolute;
+    max-width: 6cm;
+    max-height: 5cm;
+    margin: 7cm;
+    margin-left: 20.5cm;
+}
+
+.cloud2 {
+    position: absolute;
+    max-width: 7cm;
+    max-height: 5cm;
+    margin: 12cm;
+    margin-left: 26cm;
+}
+
+.cloud3 {
+    position: absolute;
+    max-width: 3cm;
+    max-height: 3cm;
+    margin: 13cm;
+    margin-left: 19.5cm;
+}
+
+.sec {
+    position: relative;
+    /*margin-top: 5cm;*/
+    background: rgb(5, 5, 5);
+    background: linear-gradient(0deg, #121113, rgba(18, 17, 19, 0.699), rgba(18, 17, 19, 0.603), rgba(18, 17, 19, 0.034));
+    padding: 200px;
+    padding-top: 20px;
+}
+
+.sec h2 {
+    padding: 5px;
+    text-align: center;
+    font-size: 2em;
+    color: #E6AF2E;
+}
+
+.sec a {
+    color: #E6AF2E;
+}
+
+.image-link-container {
+    padding: 25px;
+    display: flex; /* This enables flexbox layout */
+    justify-content: space-around; /* This spaces out the items evenly */
+    align-items: center; /* This vertically centers the items */
+}
+
+/* Tooltip container */
+.image-link-item {
+    position: relative;
+    display: inline-block;
+    border: 5px solid #333;
+    background-color: #333;
+    text-align: center; /* Center text horizontally within the image-link-item */
+    padding: 10px; /* Add padding to the image-link-item */
+    text-decoration: none;
+}
+
+/* Tooltip text */
+.tooltip-text {
+    visibility: hidden;
+    width: 120px;
+    background-color: rgb(228, 118, 22);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.image-link-item div {
+    color: #E6AF2E;
+    font-size: 1em;
+    font-weight: 300;
+}
+
+/* Tooltip arrow */
+.tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgb(228, 118, 22) transparent transparent transparent;
+}
+
+/* Show the tooltip text when you hover over the tooltip container */
+.image-link-item:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.sec p {
+    font-size: 1em;
+    color: #E6AF2E;
+    font-weight: 300;
+}
+
+.map_num {
+    text-align: center;
+    color: #E6AF2E;
+    pointer-events: none;
+    font-size: 2rem;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    margin-bottom: 20px;
+}
+.img-container {
+    text-align: center;
+    margin-right: 200px;
+}
+
+.img-container figcaption {
+    color: #E6AF2E;
+    text-align: center;
+}
+
+.York2002,
+.York2021 {
+    max-width: 700px;
+    max-height: 700px;
+    border: #E6AF2E;
+    border: 4px solid #272727; /* Set the desired border color and width */
+    padding: 10px; /* Optional: Add some padding for better visualization */
+    background-clip: padding-box; /* Clip the background color to the padding box */
+    background-color: #272727; /* Set the desired background color */
+    margin: 0;
+}
+
+
+.map_desc {
+    flex: 1;
+}
+
+.map_desc p {
+    /* position: relative;
+    padding: 75px;
+    padding-top: 10px;
+    font-size: 1em;
+    color: #E6AF2E;
+    font-weight: 300; */
+    padding: 10px;
+    font-size: 1em;
+    font-weight: 300;
+    color: #E6AF2E;
+}
+
+.image-compare-container {
+    padding: 30px;
+    display: flex; /* This enables flexbox layout */
+    justify-content: space-around; /* This spaces out the items evenly */
+    align-items: center; /* This vertically centers the items */
+}
+
+.image-compare-item {
+    position: relative;
+    display: inline-block;
+    border: 5px solid #333;
+    background-color: #333;
+    text-align: center; /* Center text horizontally within the image-link-item */
+    padding: 10px; /* Add padding to the image-link-item */
+}
+
+.image-compare-item div {
+    color: #E6AF2E;
+}
+

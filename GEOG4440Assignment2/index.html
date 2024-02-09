@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>GEOG4440 Assignment 2
+    </title>
+</head>
+
+<body>
+    <header class="sticky">
+        <!-- <h2 class="course">GEOG4440</h2> -->
+        <h2><a href=#index.html onclick="myFunction()" class="course">GEOG4440</a></h2>
+        <nav class="navigation">
+            <a>Kevin Chu / 218083477</a>
+        </nav>
+    </header>
+
+    <section class="sec">
+        <h2>Assignment 2: Filtering, Enhancement, and Extraction</h2>
+
+    <!-- Google Maps Embed -->
+    <div class="google-image">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d302460.05295060674!2d25.75615068954115!3d70.75009877081945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sca!4v1706996662001!5m2!1sen!2sca" 
+        class="image-link-item" style="width:20cm;height:15cm;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div class="text">I embedded an interactive satellite view of the study area.
+        You can scroll in and out of the map view by holding <strong>ctrl</strong> and adjust using the <strong>scroll wheel</strong>.
+        The final map with the required cartographic map elements can be viewed here.
+    </div>
+
+    <h2>Identifying the Problem</h2>
+    <!-- Images -->
+    <div class="image-link-container">
+        <!-- Figure 1 -->
+        <a href="Assignment2images\studyareapsuedo.jpg" class="image-link-item" target="_blank" rel="norefferer noopener">
+            <img src="Assignment2images\studyareapsuedo.jpg" alt="Psuedocolour" style="width:auto;height:6cm;">
+            <div><i>Fig 1. Psuedocolour of study area</i></div>
+            <span class="tooltip-text">Open Image</span>
+        </a>
+        <!-- Figure 2 -->
+        <a href="Assignment2images\colourcomposite.jpg" class="image-link-item" target="_blank" rel="norefferer noopener">
+            <img src="Assignment2images\colourcomposite.jpg" alt="colourcomposite" style="width:auto;height:6cm;">
+            <div><i>Fig 2. Colour Composite Image</i></div>
+            <span class="tooltip-text">Open Image</span>
+        </a>
+    </div>
+
+    <!-- Images -->
+    <div class="image-link-container">
+        <!-- Figure 3 -->
+        <a href="Assignment2images\redband_NIR.jpg" class="image-link-item" target="_blank" rel="norefferer noopener">
+            <img src="Assignment2images\redband_NIR.jpg" alt="redband_NIR" style="width:auto;height:6cm;">
+            <div><i>Fig 3. Red band to NIR</i></div>
+            <span class="tooltip-text">Open Image</span>
+        </a>
+        <!-- Figure 4 -->
+        <a href="Assignment2images\NDVIcomposite.jpg" class="image-link-item" target="_blank" rel="norefferer noopener">
+            <img src="Assignment2images\NDVIcomposite.jpg" alt="NDVI" style="width:auto;height:6cm;">
+            <div><i>Fig 4. NDVI composite image</i></div>
+            <span class="tooltip-text">Open Image</span>
+        </a>
+    </div>
+
+    <div class="text">To begin, I first had to identify what kind of problems are present within the 
+        Norway2024.pix file. In order to find the 512x512 study area, I did this by changing the view
+        of the "study area" raster file to psuedocolour, which displayed a black background and
+        a large green square. The green square inidicated the extent of the specified study area, as
+        you can see in <i>Fig 1</i>.<br><br><i>Figure 2</i> depicts the colour composite image of the study area.
+        We can view the colour composite image by changing the colour guns to their original bands 
+        (ie. red, green, blue), and doing so will allow us to see imperfections in the pixels of the red 
+        and green colour bands. We know that only the red and green bands are affected, and the blue bland
+        is unaffected based on simple colour theory. That is because blue is present - or working - within
+        all the bands. That is because when blue mixes with red it gives us purple, and when it mixes with
+        green it makes yellow; exactly the colours that we see within the NDVI composite image in <i>Fig 4</i>.
+        <br><i>Fig 3</i> Also shows a problem with the NIR band where dead pixels are scattered randomly throughout
+        the study area.
+    </div>
+
+    <h2>Grayscale Images</h2>
+    <!-- Images -->
+    <div class="image-link-container">
+        <!-- Figure 5 -->
+        <a href="Assignment2images\redband_grey.jpg" class="image-link-item" target="_blank" rel="norefferer noopener">
+            <img src="Assignment2images\redband_grey.jpg" alt="Red band in grayscale" style="width:auto;height:6cm;">
+            <div><i>Fig 5. Red band in grayscale</i></div>
+            <span class="tooltip-text">Open Image</span>
+        </a>
+        <!-- Figure 6 -->
+        <a href="Assignment2images\greenband_grey.jpg" class="image-link-item" target="_blank" rel="norefferer noopener">
+            <img src="Assignment2images\greenband_grey.jpg" alt="Green band in grayscale" style="width:auto;height:6cm;">
+            <div><i>Fig 6. Green band in grayscale</i></div>
+            <span class="tooltip-text">Open Image</span>
+        </a>
+        <!-- Figure 7 -->
+        <a href="Assignment2images\NIRband_grey.jpg" class="image-link-item" target="_blank" rel="norefferer noopener">
+            <img src="Assignment2images\NIRband_grey.jpg" alt="NIR band in grayscale" style="width:auto;height:6cm;">
+            <div><i>Fig 7. NIR band in grayscale</i></div>
+            <span class="tooltip-text">Open Image</span>
+        </a>
+    </div>
+
+    <div class="text">Another way to identify problems within the bands is by viewing the individual bands in
+        grayscale. Doing so will display a very drastic and clear problem in the bands that can be easily seen.
+        Above, I included the red, green, and NIR bands that has been found with indentifiable problems. As you 
+        can see, the dead pixels are now black, and white for the NIR band, as they contain no data. 
+        A stark comparison to its surroundings and very easily indentifiable.
+    </div>
+
+    <h2>Interpolation</h2>
+    <!-- Images -->
+    <div class="image-link-container">
+        <!-- Figure 8 -->
+        <a href="Assignment2images/redfixed.jpg" class="image-link-item" target="_blank" rel="norefferer noopener">
+            <img src="Assignment2images/redfixed.jpg" alt="Correct red band" style="width:auto;height:6cm;">
+            <div><i>Fig 8. Cleaned red band</i></div>
+            <span class="tooltip-text">Open Image</span>
+        </a>
+        <!-- Figure 9 -->
+        <a href="Assignment2images/greenfixed.jpg" class="image-link-item" target="_blank" rel="norefferer noopener">
+            <img src="Assignment2images/greenfixed.jpg" alt="Corrected green band" style="width:auto;height:6cm;">
+            <div><i>Fig 9. Cleaned green band</i></div>
+            <span class="tooltip-text">Open Image</span>
+        </a>
+    </div>
+
+    <div class="text">A technique we can use to clean the image is by doing what is called <strong>interpolation</strong>.
+        Interpolation essentially fills the empty space with no data values with data that is found around it.
+        To do this, we have to use the LRP: Image Line Replacement tool from the algorithm library which can be accessed
+        by going to Analysis -> Algorthim Librarian -> search "LRP". Then we need to select an input layer from our files.
+        In "Input Params" we have to specify the starting and ending position of the dead pixels. I included them within
+        the images above.<br><br>A common interpolation method is by using the average value of the neighbouring cells to fill in 
+        the missing data. However, for this case since the Y size of the pixels is greater than one, the average will
+        take the value of the dead pixels above or below it which also skews the final output and does not do a good job
+        at fixing the error.<br>
+        In this case, I believe using the "above" or "below" replacement mode was the most appropiate approach. Although
+        that will result in a segment where three rows share the same value, I still think it is justified due to how 
+        neglible it is compared to the rest of the study area and the entire image.<br><br>
+        As for the NIR band, pixel correction and interpolation using LRP is difficult because the pixels were scattered
+        randomly throughout a large area and was not in a straight, horizontal line. To perform image correction on the NIR
+        band, you might have to use a different algorithm tool; or very inefficiently, calculate LRP for each individual pixel.
+    </div>
+
+    <h2>Corrected Image</h2>
+    <!-- Figure 10 -->
+    <div class="image-link-container">
+        <a href="Assignment2images/colourcompositefixed.jpg" class="image-link-item" target="_blank">
+            <img src="Assignment2images/colourcompositefixed.jpg" alt="Fixed colour" style="width:auto;height:6cm;">
+            <div><i>Fig 10. Corrected Colour Composite Image</i></div>
+            <span class="tooltip-text">Open Image</span>
+        </a>
+    </div>
+
+    <div class="text">This is the colour composite image after interpolation of the red and green bands.
+        As you can see, there is no longer any imperfect pixel lines from the respective red and green bands.
+    </div>
+
+    <h2>FAV Enhanced Images</h2>
+    <!-- Images -->
+    <div class="image-link-container">
+        <!-- Figure 11 -->
+        <a href="Assignment2images/enhance2.jpg" class="image-link-item" target="_blank" rel="norefferer noopener">
+            <img src="Assignment2images/enhance2.jpg" alt="Enhanced (x = 2)" style="width:auto;height:6cm;">
+            <div><i>Fig 11. Enhanced (x = 2)</i></div>
+            <span class="tooltip-text">Open Image</span>
+        </a>
+        <!-- Figure 12 -->
+        <a href="Assignment2images/enhance8.jpg" class="image-link-item" target="_blank" rel="norefferer noopener">
+            <img src="Assignment2images/enhance8.jpg" alt="Enhance (x = 8)" style="width:auto;height:6cm;">
+            <div><i>Fig 12. Enhance (x = 8)</i></div>
+            <span class="tooltip-text">Open Image</span>
+        </a>
+        <!-- Figure 13 -->
+        <a href="Assignment2images\enhance16.jpg" class="image-link-item" target="_blank" rel="norefferer noopener">
+            <img src="Assignment2images\enhance16.jpg" alt="Enhance (x = 18)" style="width:auto;height:6cm;">
+            <div><i>Fig 13. Enhance (x = 18)</i></div>
+            <span class="tooltip-text">Open Image</span>
+        </a>
+    </div>
+
+    <!-- Images -->
+    <div class="image-link-container">
+        <!-- Figure 14 -->
+        <a href="Assignment2images/enhance2colour.jpg" class="image-link-item" target="_blank" rel="norefferer noopener">
+            <img src="Assignment2images/enhance2colour.jpg" alt="RedE2 Colour" style="width:auto;height:6cm;">
+            <div><i>Fig 14. RedE2 Colour</i></div>
+            <span class="tooltip-text">Open Image</span>
+        </a>
+        <!-- Figure 15 -->
+        <a href="Assignment2images/enhance8colour.jpg" class="image-link-item" target="_blank" rel="norefferer noopener">
+            <img src="Assignment2images/enhance8colour.jpg" alt="RedE8 Colour" style="width:auto;height:6cm;">
+            <div><i>Fig 6. RedE8 Colour</i></div>
+            <span class="tooltip-text">Open Image</span>
+        </a>
+        <!-- Figure 16 -->
+        <a href="Assignment2images/enhance16colour.jpg" class="image-link-item" target="_blank" rel="norefferer noopener">
+            <img src="Assignment2images/enhance16colour.jpg" alt="RedE16 Colour" style="width:auto;height:6cm;">
+            <div><i>Fig 7. RedE16 Colour</i></div>
+            <span class="tooltip-text">Open Image</span>
+        </a>
+    </div>
+
+    <div class="text">To create the Enhanced images I first had to create a 16-bit unsigned raster layer and do average filtering
+        on the "RedClean" band. By using the FAV: Averaging Filter that can be found in  Algorithm Librarian and saved it in the .pix file. 
+        After creating the 3x3 low pass filter, I then created three other raster layers that will become the enhanced <strong>RedE2,
+        RedE8,</strong> and <strong>RedE16</strong> layers. In each of the new layers (bands 6, 7, 8) I used the EASI modeller to 
+        input the Enhance formula, using the low pass filter layer as <i>Fuzzy</i>. The results of each iteration of <strong><i>x</i></strong> can
+        be seen within the figures above. The image gets blurrier after each iteration by brightening the shades of red pixels, even though the pixel values remain the same.<br><br>
+        After inputting each of the enhanced red bands into the red colour gun, we can visualize the changes that is happening in true colour.
+        As I said before, the red pixels become brighter and more apparent after each iteration of <strong><i>x</i></strong>. The same
+        can be said when viewed in grayscale, but instead the pixels become whiter.<br><br>In my opinion, <strong><i>x</i></strong> = 8 provides the best results.
+        As <strong><i>x</i></strong> = 2 has little and barely noticeable change, and <strong><i>x</i></strong> = 16 has too much noise.
+    </div>
+
+    <h2>Binary Road Layer</h2>
+    <!-- Figure 17 -->
+    <div class="image-link-container">
+        <a href="Assignment2images/binary.jpg" class="image-link-item" target="_blank">
+            <img src="Assignment2images/binary.jpg" alt="Binary" style="width:auto;height:6cm;">
+            <div><i>Fig 17. Binary map of road (1) and background (0)</i></div>
+            <span class="tooltip-text">Open Image</span>
+        </a>
+    </div>
+
+    <div class="text">Based on the grayscale pixel values of RedE8, I concluded that the best range of values for roads is between 1500 and 5000.
+        Then creating a new raster layer in the .pix file, I used the EASI Modeller again to create a binary layer where background = 0 and roads = 1.
+        The formula I used is in Figure 17 above. However, I was not able to get a perfect extraction of the roads. There are some areas where certain pixels
+        of snowtips and clouds share the same pixel values that I specified in the EASI Modeller.
+    </div>
+
+    <h2>Vector Overlay</h2>
+    <!-- Images -->
+    <div class="image-link-container">
+        <!-- Figure 18 -->
+        <a href="Assignment2images/basemap.jpg" class="image-link-item" target="_blank" rel="norefferer noopener">
+            <img src="Assignment2images/basemap.jpg" alt="Basemap" style="width:auto;height:6cm;">
+            <div><i>Fig 18. True colour image</i></div>
+            <span class="tooltip-text">Open Image</span>
+        </a>
+        <!-- Figure 19 -->
+        <a href="Assignment2images/binaryvector.jpg" class="image-link-item" target="_blank" rel="norefferer noopener">
+            <img src="Assignment2images/binaryvector.jpg" alt="Vector Overlay" style="width:auto;height:6cm;">
+            <div><i>Fig 19. Vector roads overlay</i></div>
+            <span class="tooltip-text">Open Image</span>
+        </a>
+    </div>
+
+    <div class="text">I exported the raster layer into a vector layer by using the <strong>RAS2POLY</strong> tool in the algorithm library and saved it to the clean.pix file.
+        The figures above show the map with and without the road vector layer.
+    </div>
+
+    </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
